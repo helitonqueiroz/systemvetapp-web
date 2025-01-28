@@ -1,0 +1,11 @@
+<h1>Clientes</h1>
+<a href="{% url 'pet_create' %}">Adicionar Clientes</a>
+<ul>
+    {% for cliente in clientes %}
+        <li>
+            {{ cliente.nome }} ({{ cliente.get_tipo_display }}) - Tutor: {{ cliente.tutor.nome }}
+            <a href="{% url 'cliente_update' cliente.id %}">Editar</a>
+            <a href="{% url 'cliente_delete' cliente.id %}">Excluir</a>
+        </li>
+    {% endfor %}
+</ul>

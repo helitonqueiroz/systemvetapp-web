@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from clientes.views import ClienteListView, ClienteCreateView, ClienteUpdateView, ClienteDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('clientes/', ClienteListView.as_view(), name='cliente_list'),
+    path('clientes/novo/', ClienteCreateView.as_view(), name='cliente_create'),
+    path('clientes/editar/<int:pk>/', ClienteUpdateView.as_view(), name='cliente_update'),
+    path('clientes/excluir/<int:pk>/', ClienteDeleteView.as_view(), name='cliente_delete'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # remover depois
