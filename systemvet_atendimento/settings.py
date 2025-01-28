@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'atendimento',
     'clientes',
     'consulta',
+    'vacina',
     
     # remover depois
     'debug_toolbar'
@@ -89,11 +93,14 @@ WSGI_APPLICATION = 'systemvet_atendimento.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db-systemvetapp',
+        'USER': 'systemvet',
+        'PASSWORD': 'Pa$$w0rd2225091324',
+        'HOST': 'db-systemvetapp.c1uqiyeq2r8l.us-east-2.rds.amazonaws.com',  # Ex: 'meu-banco.aws.com'
+        'PORT': '3306',  # Porta padrão do MySQL
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
