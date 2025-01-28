@@ -1,0 +1,43 @@
+# Arquivos do Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Arquivos de configuração sensíveis
+.env
+.secret
+settings/local.py
+
+# Ambiente virtual
+venv/
+env/
+.vscode/
+.idea/
+
+# Arquivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Dependências do Python
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Node.js (se você estiver usando Node.js para frontend)
+node_modules/
+npm-debug.log*
+
+# Outros
+.coverage
+htmlcov/

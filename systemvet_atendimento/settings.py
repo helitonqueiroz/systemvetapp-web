@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants
 import pymysql
+from dotenv import load_dotenv
+
+load_dotenv()
 
 pymysql.install_as_MySQLdb()
 
@@ -25,12 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xl_04z3%6bmjmz=247(e3ife6rg&@jps%8tu@b0#gkz_87qr2d'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'  # Converte para booleano
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -60,10 +62,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # remover depois
     'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'systemvet_atendimento.urls'
 
@@ -94,11 +100,11 @@ WSGI_APPLICATION = 'systemvet_atendimento.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db-systemvetapp',
-        'USER': 'systemvet',
-        'PASSWORD': 'Pa$$w0rd2225091324',
-        'HOST': 'db-systemvetapp.c1uqiyeq2r8l.us-east-2.rds.amazonaws.com',  # Ex: 'meu-banco.aws.com'
-        'PORT': '3306',  # Porta padrão do MySQL
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT', '3306'),  # Porta padrão do MySQL
     }
 }
 
