@@ -6,6 +6,13 @@
 </head>
 <body>
     {% include "partials/_nav.html" %}
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        {% block content %}{% endblock content %}
+    </div>
+
+    <!-- Script para o menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.querySelector('.navbar__toggle');
@@ -15,7 +22,9 @@
                 menu.classList.toggle('active');
             });
         });
-        
     </script>
+
+    <!-- Inclui o rodapé -->
+    {% include "partials/_footer.html" %}
 </body>
 </html>

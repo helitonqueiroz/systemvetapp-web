@@ -1,0 +1,34 @@
+<!-- partials/_footer.html -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <p class="footer__copyright">&copy; <span id="current-year"></span> SystemVet App. Todos os direitos reservados.</p>
+            <p class="footer__datetime">Data e Hora: <span id="current-date-time"></span></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Função para atualizar o ano atual
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Função para atualizar a data e hora atuais
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeString = now.toLocaleString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+        document.getElementById('current-date-time').textContent = dateTimeString;
+    }
+
+    // Atualiza a data e hora a cada segundo
+    setInterval(updateDateTime, 1000);
+
+    // Chama a função uma vez para exibir a data e hora imediatamente
+    updateDateTime();
+</script>

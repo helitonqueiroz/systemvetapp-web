@@ -4,6 +4,9 @@ from django.core.exceptions import ValidationError
 from validarcpf import validar_cpf
 import re
 from django.apps import apps
+from flask import Flask, render_template
+from database import get_db_connection
+app = Flask(__name__)
 
 class Tutor(models.Model):
     nome = models.CharField(max_length=100)
@@ -54,5 +57,38 @@ class Tutor(models.Model):
         cpf = re.sub(r'\D', '', cpf)
         return f"{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:]}"
 
+    @app.route('/tutores')
+    def tutores():
+        # Conecta ao banco de dados
+        connection = get_db_connection()
+        try:
+            with connection.cursor() as cursor:
+                # Executa a consulta SQL para recuperar os tutores
+                sql = "SELECT nome, telefone, email FROM tutores"  # Substitua "tutores" pelo nome da sua tabela
+                cursor.execute(sql)
+                tutores = cursor.fetchall()  # Recupera todos os registros
+        finally:
+            connection.close()  # Fecha a conexão com o banco de dados
+
+        # Passa os tutores para o template
+        return render_template('tutores.html', tutores=tutores)
+    
+    @app.route('/tutor/<int:tutor_id>')
+    def tutor_detalhes(tutor_id):
+        # Conecta ao banco de dados
+        connection = get_db_connection()
+        try:
+            with connection.cursor() as cursor:
+                # Executa a consulta SQL para recuperar os detalhes do tutor
+                sql = "SELECT id, nome, telefone, email FROM tutores WHERE id = %s"
+                cursor.execute(sql, (tutor_id,))
+                tutor = cursor.fetchone()  # Recupera o registro do tutor
+        finally:
+            connection.close()  # Fecha a conexão com o banco de dados
+
+        # Passa os detalhes do tutor para o template
+        return render_template('tutordetalhes.html', tutor=tutor)
+
+    
     def __str__(self):
         return self.nome

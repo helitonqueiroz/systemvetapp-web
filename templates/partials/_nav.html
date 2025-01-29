@@ -9,8 +9,8 @@
         <span class="navbar__icon"></span>
     </div>
     <div class="navbar__menu">
-        <a href="#" class="navbar__item">Clientes</a>
-        <a href="#" class="navbar__item">Tutores</a>
+        <a href="{% url "clientes:cliente_list" %}" class="navbar__item">Clientes</a>
+        <a href="{% url 'tutores:listatutores' %}" class="navbar__item">Tutores</a>
         <a href="#" class="navbar__item">Vacinas</a>
         <a href="#" class="navbar__item">Consulta</a>
     </div>
