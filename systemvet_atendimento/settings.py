@@ -97,9 +97,10 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '3306'),  # Porta padrão do MySQL
         'OPTIONS': {
             'ssl': {
-                'ca': 'C:\\Users\\HenriQ\\Documents\\certsAWS\\us-east-2-bundle.pem',
-            }
-        }
+                'ca': os.path.join(BASE_DIR, 'us-east-2-bundle.pem'),
+            },
+            'charset': 'utf8mb4',
+        },
     }
 }
 
