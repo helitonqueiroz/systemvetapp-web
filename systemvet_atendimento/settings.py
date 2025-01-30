@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'debug_toolbar'
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -96,7 +97,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '3306'),  # Porta padrão do MySQL
         'OPTIONS': {
             'ssl': {
-                'ca': 'C:\Users\HenriQ\Documents\certsAWS\us-east-2-bundle.pem',
+                'ca': 'C:\\Users\\HenriQ\\Documents\\certsAWS\\us-east-2-bundle.pem',
             }
         }
     }
