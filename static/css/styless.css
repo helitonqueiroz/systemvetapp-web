@@ -208,7 +208,7 @@ html, body {
 .footer__copyright,
 .footer__datetime {
   margin: 0; /* Remove margens padrão */
-  font-size: 14px; /* Tamanho da fonte */
+  font-size: 12px; /* Tamanho da fonte */
 }
 
 .footer__datetime {
