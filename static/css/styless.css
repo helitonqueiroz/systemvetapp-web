@@ -59,7 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  background: linear-gradient(135deg, #918da0, #928dab);
   padding: 1rem 2rem;
   color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

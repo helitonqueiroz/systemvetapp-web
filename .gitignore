@@ -5,6 +5,7 @@
 __pycache__/
 db.sqlite3
 staticfiles/
+local_settings.py
 
 # Arquivos de configuração sensíveis
 .env
