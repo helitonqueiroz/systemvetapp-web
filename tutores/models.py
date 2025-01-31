@@ -6,6 +6,7 @@ import re
 from django.apps import apps
 from flask import Flask, render_template
 from database import get_db_connection
+
 app = Flask(__name__)
 
 class Tutor(models.Model):

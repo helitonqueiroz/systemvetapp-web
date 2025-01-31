@@ -18,9 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-SECRET_KEY = 'J65+V&Y_lX0T35>Ny4B=a~H3|QI`01W*#zI8[9|4GM,Ijn,;s'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 ALLOWED_HOSTS = ['34.41.179.180', '127.0.0.1', 'localhost',]
 
@@ -92,11 +92,11 @@ WSGI_APPLICATION = 'systemvet_atendimento.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db-systemvetapp',
-        'USER': 'systemvet',
-        'PASSWORD': 'Pa$$w0rd2225091324',
-        'HOST': 'db-systemvetapp.c1uqiyeq2r8l.us-east-2.rds.amazonaws.com',
-        'PORT': '3306',  # Porta padrão do MySQL
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),  # Porta padrão do MySQL
         'OPTIONS': {
             'ssl': {
                 'ca': os.path.join(BASE_DIR, 'us-east-2-bundle.pem'),
