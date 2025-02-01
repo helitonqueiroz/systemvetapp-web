@@ -377,3 +377,31 @@ a:hover {
 .button-danger:hover {
   background: linear-gradient(to right, #d32f2f, var(--danger-color));
 }
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination .step-links {
+  display: inline-block;
+}
+
+.pagination .step-links a {
+  color: #007bff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination .step-links a:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination .step-links .current {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  margin: 0 4px;
+}

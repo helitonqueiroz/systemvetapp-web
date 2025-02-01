@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}Tutores - {% endblock title %}
-
 {% block content %}
 <div class="tutores-container">
     <h1 class="tutores-title">Tutores</h1>
-
     <div class="table-container">
         <table class="tutores-table">
             <thead>
@@ -41,15 +38,35 @@
             </tbody>
         </table>
     </div>
-
     <!-- Botões de ação -->
     <div class="actions">
         <a href="{% url 'tutores:adicionartutor' %}" class="button">Adicionar</a>
         <button type="button" onclick="editarTutor()" class="button">Editar</button>
         <button type="button" onclick="confirmarExclusao()" class="button button-danger">Excluir</button>
     </div>
-</div>
+    <!-- Paginação -->
+    {% if tutores.paginator %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if tutores.has_previous %}
+                <a href="?page=1" class="button">&laquo; Primeira</a>
+                <a href="?page={{ tutores.previous_page_number }}" class="button">Anterior</a>
+            {% endif %}
 
+            <span class="current">
+                Página {{ tutores.number }} de {{ tutores.paginator.num_pages }}.
+            </span>
+
+            {% if tutores.has_next %}
+                <a href="?page={{ tutores.next_page_number }}" class="button">Próxima</a>
+                <a href="?page={{ tutores.paginator.num_pages }}" class="button">Última &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% else %}
+    <p>A paginação não está funcionando.</p>
+{% endif %}
+</div>
 <!-- Modal de Confirmação para Exclusão -->
 <div id="confirmModal" class="modal">
     <div class="modal-content">
@@ -58,10 +75,9 @@
         <button type="button" onclick="fecharModal()" class="button">Cancelar</button>
     </div>
 </div>
-
 <!-- Inclua o arquivo JavaScript -->
 <script src="{% static 'js/tutores.js' %}"></script>
-
 <!-- Inclua o arquivo CSS -->
-<link rel="stylesheet" href="{% static 'css/tutores.css' %}">
+<link rel="stylesheet" href="{% static 'css/styless.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'css/tutores.css' %}"> {% endcomment %}
 {% endblock content %}
