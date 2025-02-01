@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Deletar Tutor - {% endblock title %}
+
+{% block content %}
+<div class="tutor-deletar-container">
+    <h1 class="tutor-deletar-title">Deletar Tutor</h1>
+    <p>Tem certeza que deseja deletar o tutor "{{ tutor.nome }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="button button-danger">Confirmar</button>
+        <a href="{% url 'tutores:listatutores' %}" class="button">Cancelar</a>
+    </form>
+</div>
+{% endblock content %}

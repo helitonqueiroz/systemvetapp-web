@@ -24,8 +24,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 ALLOWED_HOSTS = ['34.41.179.180', '127.0.0.1', 'localhost',]
 
-
-
 # Application definition
 
 INSTALLED_APPS = [

@@ -6,8 +6,8 @@ from .views import IndexView  # Import the index view
 
 urlpatterns = [
     path('', IndexView.as_view(), name='base'),  # Add the index view for systemvet_atendimento project    
-    path('', include('clientes.urls')),
-    path('tutores', include('tutores.urls')),
+    path('clientes/', include('clientes.urls', namespace='clientes')),
+    path('tutores/', include('tutores.urls', namespace='tutores')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

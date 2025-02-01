@@ -1,21 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Tutores - {% endblock title %}
 
 {% block content %}
 <div class="tutores-container">
-    <h1 class="tutores-title">Lista de Tutores</h1>
+    <h1 class="tutores-title">Tutores</h1>
+
     <div class="table-container">
         <table class="tutores-table">
             <thead>
                 <tr>
+                    <th>Selecionar</th>
                     <th>Nome</th>
                     <th>Endereço</th>
                     <th>Cidade</th>
                     <th>Estado</th>
-                    <th>Cep</th>
-                    <th>CPF</th>
-                    <th>RG</th>
                     <th>Telefone</th>
                     <th>Email</th>
                     <th>Data de Nascimento</th>
@@ -25,14 +25,12 @@
             </thead>
             <tbody>
                 {% for tutor in tutores %}
-                <tr onclick="window.location.href='{% url 'tutores:editartutores' tutor.id %}';" style="cursor: pointer;">
+                <tr>
+                    <td><input type="checkbox" name="tutor_id" value="{{ tutor.id }}"></td>
                     <td>{{ tutor.nome }}</td>
                     <td>{{ tutor.endereco }}</td>
                     <td>{{ tutor.cidade }}</td>
                     <td>{{ tutor.estado }}</td>
-                    <td>{{ tutor.cep }}</td>
-                    <td>{{ tutor.cpf }}</td>
-                    <td>{{ tutor.rg }}</td>
                     <td>{{ tutor.telefone }}</td>
                     <td>{{ tutor.email }}</td>
                     <td>{{ tutor.data_nascimento }}</td>
@@ -43,5 +41,27 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Botões de ação -->
+    <div class="actions">
+        <a href="{% url 'tutores:adicionartutor' %}" class="button">Adicionar</a>
+        <button type="button" onclick="editarTutor()" class="button">Editar</button>
+        <button type="button" onclick="confirmarExclusao()" class="button button-danger">Excluir</button>
+    </div>
 </div>
+
+<!-- Modal de Confirmação para Exclusão -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <p>Tem certeza que deseja excluir o tutor selecionado?</p>
+        <button type="button" onclick="excluirTutor()" class="button button-danger">Confirmar</button>
+        <button type="button" onclick="fecharModal()" class="button">Cancelar</button>
+    </div>
+</div>
+
+<!-- Inclua o arquivo JavaScript -->
+<script src="{% static 'js/tutores.js' %}"></script>
+
+<!-- Inclua o arquivo CSS -->
+<link rel="stylesheet" href="{% static 'css/tutores.css' %}">
 {% endblock content %}

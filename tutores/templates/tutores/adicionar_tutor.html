@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Adicionar Tutor - {% endblock title %}
+
+{% block content %}
+<div class="tutor-editar-container">
+    <h1 class="tutor-editar-title">Adicionar Tutor</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" class="form-control" required maxlength="2">
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="data_nascimento">Data de Nascimento:</label>
+            <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
+        </div>
+        <button type="submit" class="button">Salvar</button>
+    </form>
+</div>
+
+<!-- Inclua o arquivo CSS -->
+<link rel="stylesheet" href="{% static 'css/styless.css' %}">
+{% endblock content %}

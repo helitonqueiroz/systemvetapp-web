@@ -1,0 +1,1660 @@
+[2025-01-31 20:40:37 +0000] [33918] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/systemvet.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/heliton/systemvetapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1002
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/heliton/systemvetapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: systemvet_atendimento.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5142968cc0>
+  on_reload: <function OnReload.on_reload at 0x7f5142968e00>
+  when_ready: <function WhenReady.when_ready at 0x7f5142968f40>
+  pre_fork: <function Prefork.pre_fork at 0x7f5142969120>
+  post_fork: <function Postfork.post_fork at 0x7f5142969260>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f51429693a0>
+  worker_int: <function WorkerInt.worker_int at 0x7f51429694e0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5142969620>
+  pre_exec: <function PreExec.pre_exec at 0x7f5142969760>
+  pre_request: <function PreRequest.pre_request at 0x7f51429698a0>
+  post_request: <function PostRequest.post_request at 0x7f5142969940>
+  child_exit: <function ChildExit.child_exit at 0x7f5142969a80>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5142969bc0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5142969d00>
+  on_exit: <function OnExit.on_exit at 0x7f5142969e40>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f514296a020>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2025-01-31 20:40:37 +0000] [33918] [INFO] Starting gunicorn 23.0.0
+[2025-01-31 20:40:37 +0000] [33918] [DEBUG] Arbiter booted
+[2025-01-31 20:40:37 +0000] [33918] [INFO] Listening at: unix:/run/systemvet.socket (33918)
+[2025-01-31 20:40:37 +0000] [33918] [INFO] Using worker: sync
+[2025-01-31 20:40:37 +0000] [33919] [INFO] Booting worker with pid: 33919
+[2025-01-31 20:40:37 +0000] [33920] [INFO] Booting worker with pid: 33920
+[2025-01-31 20:40:37 +0000] [33921] [INFO] Booting worker with pid: 33921
+[2025-01-31 20:40:37 +0000] [33922] [INFO] Booting worker with pid: 33922
+[2025-01-31 20:40:37 +0000] [33923] [INFO] Booting worker with pid: 33923
+[2025-01-31 20:40:37 +0000] [33924] [INFO] Booting worker with pid: 33924
+[2025-01-31 20:40:37 +0000] [33918] [DEBUG] 6 workers
+[2025-01-31 17:40:39 -0300] [33919] [DEBUG] GET /
+[2025-01-31 17:40:40 -0300] [33919] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:17:40:40 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 17:55:32 -0300] [33921] [DEBUG] GET /
+[2025-01-31 17:55:32 -0300] [33921] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:17:55:32 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 17:55:34 -0300] [33921] [DEBUG] GET /
+[2025-01-31 17:55:34 -0300] [33921] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:17:55:34 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 17:55:34 -0300] [33921] [DEBUG] Failed to send error message.
+[2025-01-31 17:55:34 -0300] [33924] [DEBUG] GET /
+[2025-01-31 17:55:35 -0300] [33924] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:17:55:35 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 18:04:46 -0300] [33923] [DEBUG] GET /
+[2025-01-31 18:04:46 -0300] [33923] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:18:04:46 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 18:08:02 -0300] [33920] [DEBUG] GET /
+[2025-01-31 18:08:03 -0300] [33920] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:18:08:03 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
+[2025-01-31 18:11:52 -0300] [33923] [DEBUG] GET /
+[2025-01-31 18:11:52 -0300] [33923] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py", line 12, in process_request
+    request._messages = default_storage(request)
+                        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py", line 12, in default_storage
+    return import_string(settings.MESSAGE_STORAGE)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py", line 17, in __init__
+    storage_class(*args, **kwargs) for storage_class in self.storage_classes
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py", line 92, in __init__
+    self.signer = signing.get_cookie_signer(salt=self.key_salt)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/signing.py", line 112, in get_cookie_signer
+    key=_cookie_signer_key(settings.SECRET_KEY),
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 129, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 397, in get_traceback_data
+    "settings": self.filter.get_safe_settings(),
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/views/debug.py", line 156, in get_safe_settings
+    settings_dict[k] = self.cleanse_setting(k, getattr(settings, k))
+                                               ~~~~~~~^^^^^^^^^^^^^
+  File "/home/heliton/systemvetapp/venv/lib/python3.13/site-packages/django/conf/__init__.py", line 90, in __getattr__
+    raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
+django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+ - - [31/Jan/2025:18:11:52 -0300] "GET / HTTP/1.1" 500 0 "-" "-"
