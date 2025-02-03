@@ -1,17 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     {% include "partials/_head.html" %}
     <title>{% block title %}{% endblock title %} SystemVet App</title>
+    <style>
+        /* Estilo para garantir que o rodapé fique no final */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1; /* O conteúdo principal ocupa todo o espaço disponível */
+        }
+    </style>
 </head>
 <body>
     {% include "partials/_nav.html" %}
-
     <!-- Conteúdo principal -->
     <div class="main-content">
         {% block content %}{% endblock content %}
     </div>
-
     <!-- Script para o menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +36,6 @@
             });
         });
     </script>
-
     <!-- Inclui o rodapé -->
     {% include "partials/_footer.html" %}
 </body>

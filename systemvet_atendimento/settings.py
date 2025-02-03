@@ -38,11 +38,33 @@ INSTALLED_APPS = [
     'clientes',
     'consulta',
     'vacina',
+    # Outros apps...
+    # 'rest_framework',
     
     # remover depois
     'debug_toolbar'
 ]
 
+INSTALLED_APPS += [
+    'corsheaders',
+]
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.AllowAny',  # Permite acesso sem autenticação (apenas para testes)
+#     ),
+# }
+
+from datetime import timedelta
+
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),  # Token válido por 30 minutos
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),     # Refresh token válido por 1 dia
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,10 +76,38 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'tutores.middleware.UserLoggingMiddleware',
+    'clientes.middleware.UserLoggingMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 
     # remover depois
     'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'user_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': None,  # Será definido dinamicamente
+        },
+    },
+    'loggers': {
+        'user_logger': {
+            'handlers': ['user_file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+# Diretório para armazenar os logs
+LOGS_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -153,9 +203,11 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
 }
 
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
+LOGIN_URL = 'login'
 
-SESSION_SAVE_EVERY_REQUEST = False
+SESSION_COOKIE_AGE = 30 * 60  # 30 minutos
+SESSION_SAVE_EVERY_REQUEST = True  # Renova a sessão a cada requisição
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # A sessão expira ao fechar o navegador
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -165,3 +217,16 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}

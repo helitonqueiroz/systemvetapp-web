@@ -1,7 +1,11 @@
 <nav class="navbar">
     <div class="navbar__brand">
-        <img class="navbar__logo" src="\static\media\logo.jpg" alt="SystemVet Logo">
-        SystemVet App
+        <a href="{% url 'home' %}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="display: flex; align-items: center;">
+                <img class="navbar__logo" src="\static\media\logo.jpg" alt="SystemVet Logo">
+                <span style="font-size: 1.2em;">SystemVet App</span>
+            </div>
+        </a>
     </div>
     <div class="navbar__toggle">
         <span class="navbar__icon"></span>
@@ -9,9 +13,14 @@
         <span class="navbar__icon"></span>
     </div>
     <div class="navbar__menu">
-        <a href="{% url "clientes:cliente_list" %}" class="navbar__item">Clientes</a>
+        <a href="{% url 'clientes:cliente_list' %}" class="navbar__item">Clientes</a>
         <a href="{% url 'tutores:listatutores' %}" class="navbar__item">Tutores</a>
         <a href="#" class="navbar__item">Vacinas</a>
         <a href="#" class="navbar__item">Consulta</a>
+        
+        <!-- Exibe o link de login se o usuário não estiver autenticado -->
+        {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}" class="navbar__item">Login</a>
+        {% endif %}
     </div>
 </nav>

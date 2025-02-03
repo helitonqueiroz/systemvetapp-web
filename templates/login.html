@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login - {% endblock title %}
+{% block content %}
+    <h2>Login</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <div class="login-container">
+        <form class="login-form-group" method="post" id="login-form">
+            {% csrf_token %}
+            <label for="username">Usuário:</label>
+            <input type="text" name="username" required><br>
+            <br>
+            <label for="password">Senha:</label>
+            <input type="password" name="password" required><br>
+            <br>
+            <!-- Botões alinhados -->
+            <div class="button-container">
+                <button class="button" type="submit" id="submit-button">Entrar</button>
+                <a href="{% url 'register' %}" class="button">Novo Usuário</a>
+            </div>
+        </form>
+        <!-- Barra de progresso -->
+        <div id="loading-bar" style="display: none;">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{% static 'css/styless.css' %}">
+
+    <style>
+        /* Estilo para o contêiner dos botões */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Alinha os botões nas extremidades */
+            align-items: center;
+            gap: 10px; /* Espaço entre os botões */
+        }
+
+        /* Garantir que os botões tenham o mesmo tamanho de fonte */
+        .button-container .button {
+            font-size: 1rem; /* Tamanho de fonte igual para todos */
+            flex: 1; /* Distribui o espaço igualmente */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Estilo para a barra de progresso */
+        #loading-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 10px;
+            background-color: #4caf50;
+            animation: progress 2s infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0; }
+            50% { width: 50%; }
+            100% { width: 100%; }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('login-form');
+            const submitButton = document.getElementById('submit-button');
+            const loadingBar = document.getElementById('loading-bar');
+
+            form.addEventListener('submit', function () {
+                // Exibe a barra de progresso
+                loadingBar.style.display = 'block';
+                // Desabilita o botão de submit para evitar múltiplos envios
+                submitButton.disabled = true;
+            });
+        });
+    </script>
+{% endblock content %}

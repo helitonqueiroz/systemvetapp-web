@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Cadastrar Usuário - {% endblock title %}
+{% block content %}
+    <div class="login-container">
+        <h2>Registrar</h2>
+        <!-- Exibe mensagens de erro -->
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <form class="login-form-group" method="post" id="register-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Usuário:</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Senha:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <!-- Verificações de senha -->
+            <div id="password-checks" style="margin-top: 10px;">
+                <small id="length-check" style="color: red;">• A senha deve ter pelo menos 8 caracteres.</small><br>
+                <small id="uppercase-check" style="color: red;">• A senha deve conter pelo menos uma letra maiúscula.</small><br>
+                <small id="number-check" style="color: red;">• A senha deve conter pelo menos um número.</small><br>
+                <small id="match-check" style="color: red;">• As senhas devem ser iguais.</small>
+            </div>
+            <br>
+            <!-- Botões alinhados -->
+            <div class="button-container">
+                <button class="button" type="submit">Registrar</button>
+                <a href="{% url 'login' %}" class="button button-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <link rel="stylesheet" href="{% static 'css/styless.css' %}">
+
+    <style>
+        /* Estilo para o contêiner dos botões */
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Alinha os botões à esquerda */
+            align-items: center;
+            gap: 10px; /* Espaço entre os botões */
+        }
+
+        /* Garantir que os botões tenham o mesmo tamanho de fonte */
+        .button-container .button {
+            font-size: 1rem; /* Tamanho de fonte igual para todos */
+            flex: 1; /* Distribui o espaço igualmente */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Estilo específico para o botão Cancelar */
+        .button-cancel {
+            background: linear-gradient(to right, #ff4444, #cc0000); /* Gradiente vermelho */
+        }
+
+        .button-cancel:hover {
+            background: linear-gradient(to right, #cc0000, #ff4444); /* Efeito hover */
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.querySelector('#password');
+            const confirmPasswordInput = document.querySelector('#confirm_password');
+            const lengthCheck = document.getElementById('length-check');
+            const uppercaseCheck = document.getElementById('uppercase-check');
+            const numberCheck = document.getElementById('number-check');
+            const matchCheck = document.getElementById('match-check');
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+
+                // Verifica o comprimento da senha
+                if (password.length >= 8) {
+                    lengthCheck.style.color = 'green';
+                } else {
+                    lengthCheck.style.color = 'red';
+                }
+
+                // Verifica se há pelo menos uma letra maiúscula
+                if (/[A-Z]/.test(password)) {
+                    uppercaseCheck.style.color = 'green';
+                } else {
+                    uppercaseCheck.style.color = 'red';
+                }
+
+                // Verifica se há pelo menos um número
+                if (/\d/.test(password)) {
+                    numberCheck.style.color = 'green';
+                } else {
+                    numberCheck.style.color = 'red';
+                }
+
+                // Verifica se as senhas coincidem
+                if (password === confirmPassword && password !== '') {
+                    matchCheck.style.color = 'green';
+                } else {
+                    matchCheck.style.color = 'red';
+                }
+            }
+
+            passwordInput.addEventListener('input', validatePassword);
+            confirmPasswordInput.addEventListener('input', validatePassword);
+        });
+    </script>
+{% endblock content %}

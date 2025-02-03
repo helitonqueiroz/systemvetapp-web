@@ -3,6 +3,13 @@
     <div class="container">
         <div class="footer__content">
             <p class="footer__copyright">&copy; <span id="current-year"></span> SystemVet App. Todos os direitos reservados.</p>
+            {% if user.is_authenticated %}
+            <div style="font-size: 0.9em; margin-top: 5px;">
+                <span>Olá, {{ user.username }}!</span>
+                <a href="{% url 'logout' %}" style="color: #ff4444; margin-left: 10px;">Logout</a>
+            </div>
+        {% endif %}
+
             <p class="footer__datetime">Data e Hora: <span id="current-date-time"></span></p>
         </div>
     </div>

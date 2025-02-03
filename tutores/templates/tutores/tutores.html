@@ -38,12 +38,14 @@
             </tbody>
         </table>
     </div>
-    <!-- Botões de ação -->
+
+    <!-- Botões de Ação -->
     <div class="actions">
         <a href="{% url 'tutores:adicionartutor' %}" class="button">Adicionar</a>
         <button type="button" onclick="editarTutor()" class="button">Editar</button>
-        <button type="button" onclick="confirmarExclusao()" class="button button-danger">Excluir</button>
+        <button type="button" onclick="excluirTutor()" class="button button-danger">Excluir</button>
     </div>
+
     <!-- Paginação -->
     {% if tutores.paginator %}
     <div class="pagination">
@@ -52,32 +54,43 @@
                 <a href="?page=1" class="button">&laquo; Primeira</a>
                 <a href="?page={{ tutores.previous_page_number }}" class="button">Anterior</a>
             {% endif %}
-
             <span class="current">
                 Página {{ tutores.number }} de {{ tutores.paginator.num_pages }}.
             </span>
-
             {% if tutores.has_next %}
                 <a href="?page={{ tutores.next_page_number }}" class="button">Próxima</a>
                 <a href="?page={{ tutores.paginator.num_pages }}" class="button">Última &raquo;</a>
             {% endif %}
         </span>
     </div>
-{% else %}
-    <p>A paginação não está funcionando.</p>
-{% endif %}
+    {% else %}
+        <p>A paginação não está funcionando.</p>
+    {% endif %}
 </div>
-<!-- Modal de Confirmação para Exclusão -->
-<div id="confirmModal" class="modal">
-    <div class="modal-content">
-        <p>Tem certeza que deseja excluir o tutor selecionado?</p>
-        <button type="button" onclick="excluirTutor()" class="button button-danger">Confirmar</button>
-        <button type="button" onclick="fecharModal()" class="button">Cancelar</button>
-    </div>
-</div>
-<!-- Inclua o arquivo JavaScript -->
-<script src="{% static 'js/tutores.js' %}"></script>
+
+<script>
+    function editarTutor() {
+        const selected = document.querySelector('input[name="tutor_id"]:checked');
+        if (selected) {
+            const tutorId = selected.value;
+            window.location.href = `/tutores/editar_tutor/${tutorId}/`;
+        } else {
+            alert("Por favor, selecione um tutor para editar.");
+        }
+    }
+
+    function excluirTutor() {
+        const selected = document.querySelector('input[name="tutor_id"]:checked');
+        if (!selected) {
+            alert("Por favor, selecione um tutor para excluir.");
+            return; // Impede o redirecionamento
+        }
+
+        const tutorId = selected.value;
+        window.location.href = `/tutores/deletar/${tutorId}/`; // Redireciona para a DeleteView
+    }
+</script>
+
 <!-- Inclua o arquivo CSS -->
 <link rel="stylesheet" href="{% static 'css/styless.css' %}">
-{% comment %} <link rel="stylesheet" href="{% static 'css/tutores.css' %}"> {% endcomment %}
 {% endblock content %}

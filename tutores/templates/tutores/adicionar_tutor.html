@@ -1,53 +1,77 @@
+<!-- tutores/adicionar_tutor.html -->
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}Adicionar Tutor - {% endblock title %}
-
 {% block content %}
 <div class="tutor-editar-container">
     <h1 class="tutor-editar-title">Adicionar Tutor</h1>
+    
+    <!-- Exibe mensagens de sucesso ou erro -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <p class="message {{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <!-- Formulário gerado automaticamente pelo Django -->
     <form method="post">
         {% csrf_token %}
+        {{ form.non_field_errors }} <!-- Exibe erros gerais do formulário -->
+        
+        <!-- Renderiza cada campo do formulário com suas respectivas classes e mensagens de erro -->
         <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" class="form-control" required>
+            <label for="{{ form.nome.id_for_label }}">Nome:</label>
+            {{ form.nome }}
+            {{ form.nome.errors }}
         </div>
         <div class="form-group">
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" class="form-control" required>
+            <label for="{{ form.endereco.id_for_label }}">Endereço:</label>
+            {{ form.endereco }}
+            {{ form.endereco.errors }}
         </div>
         <div class="form-group">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" class="form-control" required>
+            <label for="{{ form.cidade.id_for_label }}">Cidade:</label>
+            {{ form.cidade }}
+            {{ form.cidade.errors }}
         </div>
         <div class="form-group">
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" class="form-control" required maxlength="2">
+            <label for="{{ form.estado.id_for_label }}">Estado:</label>
+            {{ form.estado }}
+            {{ form.estado.errors }}
         </div>
         <div class="form-group">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" class="form-control" required>
+            <label for="{{ form.cep.id_for_label }}">CEP:</label>
+            {{ form.cep }}
+            {{ form.cep.errors }}
         </div>
         <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" class="form-control" required>
+            <label for="{{ form.cpf.id_for_label }}">CPF:</label>
+            {{ form.cpf }}
+            {{ form.cpf.errors }}
         </div>
         <div class="form-group">
-            <label for="rg">RG:</label>
-            <input type="text" id="rg" name="rg" class="form-control" required>
+            <label for="{{ form.rg.id_for_label }}">RG:</label>
+            {{ form.rg }}
+            {{ form.rg.errors }}
         </div>
         <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" class="form-control" required>
+            <label for="{{ form.telefone.id_for_label }}">Telefone:</label>
+            {{ form.telefone }}
+            {{ form.telefone.errors }}
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            {{ form.email.errors }}
         </div>
         <div class="form-group">
-            <label for="data_nascimento">Data de Nascimento:</label>
-            <input id="data_nascimento" name="data_nascimento" class="form-control" required>
+            <label for="{{ form.data_nascimento.id_for_label }}">Data de Nascimento:</label>
+            {{ form.data_nascimento }}
+            {{ form.data_nascimento.errors }}
         </div>
+        
         <button type="submit" class="button">Salvar</button>
     </form>
 </div>

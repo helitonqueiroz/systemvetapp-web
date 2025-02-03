@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Clientes - {% endblock title %}
+
+{% block content %}
     <h1>
         Aqui ficará a página de Clientes
     </h1>
-</body>
-</html>
+<link rel="stylesheet" href="{% static 'css/styless.css' %}">
+{% endblock content %}

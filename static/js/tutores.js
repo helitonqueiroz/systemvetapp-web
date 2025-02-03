@@ -1,16 +1,3 @@
-// static/js/tutores.js
-
-function editarTutor() {
-    const selected = document.querySelector('input[name="tutor_id"]:checked');
-    if (selected) {
-        const tutorId = selected.value;
-        // Redireciona para a URL de edição do tutor selecionado
-        window.location.href = `/tutores/editar_tutor/${tutorId}/`;
-    } else {
-        alert("Por favor, selecione um tutor para editar.");
-    }
-}
-
 function confirmarExclusao() {
     const selected = document.querySelector('input[name="tutor_id"]:checked');
     if (selected) {
@@ -22,29 +9,33 @@ function confirmarExclusao() {
 
 function excluirTutor() {
     const selected = document.querySelector('input[name="tutor_id"]:checked');
-    if (selected) {
-        const tutorId = selected.value;
-        
-        // Envia uma requisição AJAX para excluir o tutor
-        fetch(`/tutores/deletar_tutor/${tutorId}/`, {
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': getCookie('csrftoken'), // Adiciona o token CSRF
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(response => {
-            if (response.ok) {
-                // Recarrega a página após a exclusão
-                window.location.reload();
-            } else {
-                alert("Erro ao excluir o tutor.");
-            }
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-        });
+    if (!selected) {
+        alert("Por favor, selecione um tutor para excluir.");
+        return;
     }
+
+    const tutorId = selected.value;
+
+    fetch(`/tutores/deletar/${tutorId}/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.reload(); // Recarrega a página após a exclusão
+        } else {
+            alert("Erro ao excluir o tutor.");
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert("Erro ao excluir o tutor.");
+    });
+
+    fecharModal();
 }
 
 function fecharModal() {
