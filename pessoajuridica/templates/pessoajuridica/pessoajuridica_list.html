@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Pessoas Jurídicas</title>
+</head>
+<body>
+    <h1>Lista de Pessoas Jurídicas</h1>
+    <a href="{% url 'pessoajuridica-create' %}">Adicionar Nova Pessoa Jurídica</a>
+    <ul>
+        {% for pessoa in pessoas_juridicas %}
+            <li>
+                {{ pessoa.razao_social }} - CNPJ: {{ pessoa.cnpj }}
+                <a href="{% url 'pessoajuridica-detail' pessoa.pk %}">Detalhes</a>
+                <a href="{% url 'pessoajuridica-update' pessoa.pk %}">Editar</a>
+                <a href="{% url 'pessoajuridica-delete' pessoa.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

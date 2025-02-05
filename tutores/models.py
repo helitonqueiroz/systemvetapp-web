@@ -50,6 +50,7 @@ class Tutor(models.Model):
     data_cadastro = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
 
+
     class Meta:
         verbose_name = 'Tutor'
         verbose_name_plural = 'Tutores'

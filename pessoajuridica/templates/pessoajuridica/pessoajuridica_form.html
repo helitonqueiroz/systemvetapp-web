@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if object %}Editar{% else %}Criar{% endif %} Pessoa Jurídica</title>
+</head>
+<body>
+    <h1>{% if object %}Editar{% else %}Criar{% endif %} Pessoa Jurídica</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'pessoajuridica-list' %}">Cancelar</a>
+</body>
+</html>

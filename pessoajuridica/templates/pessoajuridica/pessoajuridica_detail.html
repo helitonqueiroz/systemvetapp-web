@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Pessoa Jurídica</title>
+</head>
+<body>
+    <h1>{{ object.razao_social }}</h1>
+    <p>CNPJ: {{ object.cnpj }}</p>
+    <p>Endereço: {{ object.endereco_logradouro }}, {{ object.endereco_numero }}</p>
+    <a href="{% url 'pessoajuridica-list' %}">Voltar</a>
+</body>
+</html>

@@ -13,9 +13,16 @@
         body {
             display: flex;
             flex-direction: column;
+            background-image: url("{% static 'media/tela_de_fundo.png' %}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: 0.9; /* Ajuste a opacidade conforme necessário */
         }
         .main-content {
             flex: 1; /* O conteúdo principal ocupa todo o espaço disponível */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para o conteúdo */
         }
     </style>
 </head>

@@ -4,6 +4,22 @@
 {% block content %}
 <div class="tutores-container">
     <h1 class="tutores-title">Tutores</h1>
+
+    <!-- Barra de Progresso -->
+    <div id="progressBar" class="progress-bar" style="display: none;">
+        <div class="progress"></div>
+    </div>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-bar">
+        <form method="GET" action="" id="searchForm" onsubmit="showProgressBar()">
+            <input type="text" name="q" placeholder="Buscar tutor pelo nome..." value="{{ request.GET.q }}">
+            <button type="submit">Buscar</button>
+            <button type="button" onclick="limparBusca()">Limpar</button>
+        </form>
+    </div>
+
+    <!-- Tabela de Tutores -->
     <div class="table-container">
         <table class="tutores-table">
             <thead>
@@ -51,15 +67,15 @@
     <div class="pagination">
         <span class="step-links">
             {% if tutores.has_previous %}
-                <a href="?page=1" class="button">&laquo; Primeira</a>
-                <a href="?page={{ tutores.previous_page_number }}" class="button">Anterior</a>
+                <a href="?q={{ request.GET.q }}&page=1" class="button">&laquo; Primeira</a>
+                <a href="?q={{ request.GET.q }}&page={{ tutores.previous_page_number }}" class="button">Anterior</a>
             {% endif %}
             <span class="current">
                 Página {{ tutores.number }} de {{ tutores.paginator.num_pages }}.
             </span>
             {% if tutores.has_next %}
-                <a href="?page={{ tutores.next_page_number }}" class="button">Próxima</a>
-                <a href="?page={{ tutores.paginator.num_pages }}" class="button">Última &raquo;</a>
+                <a href="?q={{ request.GET.q }}&page={{ tutores.next_page_number }}" class="button">Próxima</a>
+                <a href="?q={{ request.GET.q }}&page={{ tutores.paginator.num_pages }}" class="button">Última &raquo;</a>
             {% endif %}
         </span>
     </div>
@@ -68,7 +84,28 @@
     {% endif %}
 </div>
 
+<!-- Script para Editar/Excluir Tutor -->
 <script>
+    // Função para mostrar a barra de progresso
+    function showProgressBar() {
+        const progressBar = document.getElementById("progressBar");
+        progressBar.style.display = "block"; // Mostra a barra de progresso
+    }
+
+    // Função para limpar a busca
+    function limparBusca() {
+        const form = document.getElementById("searchForm");
+        form.querySelector('input[name="q"]').value = ""; // Limpa o campo de busca
+        showProgressBar(); // Mostra a barra de progresso
+        form.submit(); // Envia o formulário vazio para recarregar a página
+    }
+
+    // Função para ocultar a barra de progresso após o carregamento da página
+    window.onload = function () {
+        const progressBar = document.getElementById("progressBar");
+        progressBar.style.display = "none"; // Oculta a barra de progresso
+    };
+
     function editarTutor() {
         const selected = document.querySelector('input[name="tutor_id"]:checked');
         if (selected) {
@@ -83,14 +120,39 @@
         const selected = document.querySelector('input[name="tutor_id"]:checked');
         if (!selected) {
             alert("Por favor, selecione um tutor para excluir.");
-            return; // Impede o redirecionamento
+            return;
         }
-
         const tutorId = selected.value;
-        window.location.href = `/tutores/deletar/${tutorId}/`; // Redireciona para a DeleteView
+        window.location.href = `/tutores/deletar/${tutorId}/`;
     }
 </script>
 
 <!-- Inclua o arquivo CSS -->
 <link rel="stylesheet" href="{% static 'css/styless.css' %}">
+<style>
+    /* Estilo para a barra de progresso */
+    .progress-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #e0e0e0;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .progress {
+        width: 100%;
+        height: 100%;
+        background-color: #007bff;
+        animation: progress-animation 1s linear infinite;
+    }
+
+    @keyframes progress-animation {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+</style>
 {% endblock content %}

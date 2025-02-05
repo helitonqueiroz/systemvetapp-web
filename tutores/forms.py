@@ -25,3 +25,12 @@ class TutorForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
             'data_nascimento': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }
+
+    def clean_cpf(self):
+        """
+        Valida o CPF antes de salvar.
+        """
+        cpf = self.cleaned_data.get('cpf')
+        if not cpf.isdigit() or len(cpf) != 11:
+            raise forms.ValidationError('CPF inválido. Deve conter 11 dígitos numéricos.')
+        return cpf

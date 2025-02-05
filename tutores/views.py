@@ -12,6 +12,7 @@ from .models import Tutor
 from .forms import TutorForm
 from django.core.paginator import Paginator
 import logging
+from django.db.models import Q
 
 logger = logging.getLogger(__name__)
 
@@ -23,19 +24,22 @@ class DeletarTutorView(LoginRequiredMixin, DeleteView):
     context_object_name = 'tutor'
 
 @login_required
-def lista_tutores(request):
-    """
-    View para listar todos os tutores com paginação.
-    """
-    # Obtém todos os tutores ordenados pelo nome
-    tutores = Tutor.objects.all().order_by('nome')
-    # Configura a paginação (10 itens por página)
-    paginator = Paginator(tutores, 10)
-    page_number = request.GET.get('page')  # Obtém o número da página da URL
-    page_obj = paginator.get_page(page_number)  # Obtém a página atual
-    # Renderiza o template com o contexto
-    return render(request, 'tutores/tutores.html', {'tutores': page_obj})
-    
+def listar_tutores(request):
+    query = request.GET.get('q')  # Obtém o termo de busca
+    if query:
+        # Filtra os tutores cujo nome contém o termo de busca (case-insensitive)
+        tutores = Tutor.objects.filter(Q(nome__icontains=query)).order_by('nome')
+    else:
+        # Se não houver termo de busca, retorna todos os tutores ordenados por nome
+        tutores = Tutor.objects.all().order_by('nome')
+
+    # Paginação
+    paginator = Paginator(tutores, 10)  # Exibe 10 tutores por página
+    page_number = request.GET.get('page')
+    tutores_paginados = paginator.get_page(page_number)
+
+    return render(request, 'tutores/tutores.html', {'tutores': tutores_paginados})
+
 @login_required        
 def editar_tutor(request, pk):
     """
